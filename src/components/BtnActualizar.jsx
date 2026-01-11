@@ -400,6 +400,16 @@ const BtnActualizar = ({ propiedad, onActualizado }) => {
                             w="80px"
                             h="80px"
                           >
+                            <img
+                              src={URL.createObjectURL(archivo)}
+                              alt="preview"
+                              style={{
+                                width: "100%",
+                                height: "100%",
+                                objectFit: "cover",
+                                borderRadius: "6px",
+                              }}
+                            />
                             <Box
                               className={`${fondo}`}
                               position="absolute"
@@ -422,11 +432,6 @@ const BtnActualizar = ({ propiedad, onActualizado }) => {
                         <Flex wrap="wrap" gap={3}>
                           {imagenes.map((img) => (
                             <Box position="relative" key={img.id}>
-                              <img
-                                alt="preview"
-                                src={`${API_URL}${img.url}`}
-                                className="w-[85px]"
-                              />
                               <Box
                                 position="absolute"
                                 top="0px"
