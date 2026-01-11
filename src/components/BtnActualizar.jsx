@@ -401,7 +401,7 @@ const BtnActualizar = ({ propiedad, onActualizado }) => {
                             h="80px"
                           >
                             <img
-                              src={URL.createObjectURL(archivo)}
+                              src={URL.createObjectURL(img)}
                               alt="preview"
                               style={{
                                 width: "100%",
@@ -434,7 +434,7 @@ const BtnActualizar = ({ propiedad, onActualizado }) => {
                             <Box position="relative" key={img.id}>
                               <img
                                 alt="preview modal"
-                                src={`${API_URL}${img.url}`}
+                                src={`${img.url}`}
                                 className="w-[85px]"
                               />
                               <Box
