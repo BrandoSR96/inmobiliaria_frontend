@@ -400,15 +400,6 @@ const BtnActualizar = ({ propiedad, onActualizado }) => {
                             w="80px"
                             h="80px"
                           >
-                            <img //src={URL.createObjectURL(archivo)}
-                              alt="preview"
-                              style={{
-                                width: "100%",
-                                height: "100%",
-                                objectFit: "cover",
-                                borderRadius: "6px",
-                              }}
-                            />
                             <Box
                               className={`${fondo}`}
                               position="absolute"
