@@ -403,7 +403,7 @@ const BtnActualizar = ({ propiedad, onActualizado }) => {
                             <img
                               //src={URL.createObjectURL(img)}
                               src={
-                                img.url.startsWith("http")
+                                img.url.startsWith("https")
                                   ? img.url
                                   : `${API_URL}${img.url}`
                               }
