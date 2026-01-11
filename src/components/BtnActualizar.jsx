@@ -401,8 +401,13 @@ const BtnActualizar = ({ propiedad, onActualizado }) => {
                             h="80px"
                           >
                             <img
-                              src={URL.createObjectURL(img).startsWith("https")}
-                              //src={ img.url.startsWith("https") ? img.url : `${API_URL}${img.url}` }
+                              //src={URL.createObjectURL(img).startsWith("https")}
+                              src={
+                                typeof img === "string" &&
+                                img.startsWith("https://res.cloudinary.com/")
+                                  ? img
+                                  : ""
+                              }
                               alt="preview"
                               style={{
                                 width: "100%",
