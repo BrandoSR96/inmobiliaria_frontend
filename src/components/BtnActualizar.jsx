@@ -402,7 +402,12 @@ const BtnActualizar = ({ propiedad, onActualizado }) => {
                           >
                             <img
                               //src={URL.createObjectURL(img)}
-                              src="https://res.cloudinary.com/dk8mvsb8f/image/upload/v1768166295/qc5gjwcis3xosqcsrbys.jpg"
+                              src={
+                                "https://res.cloudinary.com" +
+                                URL.createObjectURL(img).split(
+                                  "https://res.cloudinary.com"
+                                )[1]
+                              }
                               alt="preview"
                               style={{
                                 width: "100%",
