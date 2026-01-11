@@ -52,7 +52,7 @@ const Idioma = () => {
         >
           <img
             className="w-[32px]  p-[2px]"
-            src="/public/img/global.png"
+            src="img/global.png"
             alt="Cambiar Idioma"
           />
         </MenuButton>

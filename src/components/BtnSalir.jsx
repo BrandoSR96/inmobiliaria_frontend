@@ -15,9 +15,7 @@ const BtnSalir = () => {
     colorMode === "light" ? "bg-white text-black" : "bg-gray-900 text-white";
 
   const logo =
-    colorMode === "light"
-      ? "public/img/logo.png"
-      : "/public/img/logo_fondo_blanco.png";
+    colorMode === "light" ? "img/logo.png" : "img/logo_fondo_blanco.png";
 
   const handleLogout = () => {
     // 🗑️ Eliminar token del localStorage
@@ -97,7 +95,7 @@ const BtnSalir = () => {
             >
               <img
                 class="w-full p-[5px] "
-                src="/public/img/ArrowRightStartOnRectangle.svg"
+                src="img/ArrowRightStartOnRectangle.svg"
                 alt="salir"
               />
             </button>

@@ -61,7 +61,7 @@ const Dashboard = () => {
     <div class="flex justify-center items-center h-screen bg-gradient-to-r from-amber-700 via-amber-600  to-amber-800 ">
       <div class="flex justify-center items-center">
         <div class="w-100 h-[100%] flex gap-5 flex-col py-15 px-5 justify-center bg-neutral-50 shadow-md rounded-md">
-          <img src="/public/img/logo.jpg" alt="Logo" class="w-30 self-center" />
+          <img src="img/logo.jpg" alt="Logo" class="w-30 self-center" />
           <form
             onSubmit={Login}
             class="flex flex-col text-left px-10 py-4 gap-5 h-fit justify-between"

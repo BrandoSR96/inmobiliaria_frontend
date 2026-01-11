@@ -27,7 +27,7 @@ const Temas = () => {
         >
           <img
             className="w-[25px] h-[25px]"
-            src="/public/img/color.png"
+            src="img/color.png"
             alt="Cambiar tema"
           />
         </MenuButton>

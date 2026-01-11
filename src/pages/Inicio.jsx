@@ -87,13 +87,13 @@ const Inicio = () => {
           {/* https://wa.me/+51919527727  */}
           <a
             class="!hover:bg-amber-400"
-            href="https://wa.me/+51984010709?text=Hola%20quiero%20contactame%20contigo"
+            href="https://wa.me/+51984010709?text=Hola%2C%20deseo%20informaci%C3%B3n%20de%20los%20terrenos%2C%20por%20favor"
             target="_blank"
           >
             <img
               // class="w-13 hover:w-15 transition-all duration-200"
               className="w-12 sm:w-14 md:w-16 transition-all duration-200"
-              src="../../public/img/whatsapp.png"
+              src="../../img/whatsapp.png"
               alt=""
             />
           </a>

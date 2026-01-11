@@ -355,7 +355,7 @@ const Terreno = ({ filteredPropiedades, filters, updateFilter }) => {
                           <div class="flex gap-6">
                             <img
                               class="w-5 h-5 text-xs"
-                              src="/public/img/MapPin.svg"
+                              src="img/MapPin.svg"
                               alt=""
                             />
                             <p>
@@ -368,7 +368,7 @@ const Terreno = ({ filteredPropiedades, filters, updateFilter }) => {
                           <div class="flex gap-6">
                             <img
                               class="w-5 text-xs"
-                              src="/public/img/Arrow-Arrow-expand.svg"
+                              src="img/Arrow-Arrow-expand.svg"
                               alt=""
                             />
                             <p>{prop.metrosCuadrados} m²</p>
@@ -525,7 +525,7 @@ const Terreno = ({ filteredPropiedades, filters, updateFilter }) => {
                         </div>
                         <div class="flex gap-2 items-start">
                           <p class="text-[20px] items-start text-amber-950">
-                            <img class="w-5" src="/public/img/MapPin.svg" />
+                            <img class="w-5" src="img/MapPin.svg" />
                           </p>
                           <div class="flex flex-col">
                             <p class="text-[1rem] text-zinc-400">
