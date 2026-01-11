@@ -401,12 +401,8 @@ const BtnActualizar = ({ propiedad, onActualizado }) => {
                             h="80px"
                           >
                             <img
-                              //src={URL.createObjectURL(img)}
-                              src={
-                                img.url.startsWith("https")
-                                  ? img.url
-                                  : `${API_URL}${img.url}`
-                              }
+                              src={URL.createObjectURL(img).startsWith("https")}
+                              //src={ img.url.startsWith("https") ? img.url : `${API_URL}${img.url}` }
                               alt="preview"
                               style={{
                                 width: "100%",
