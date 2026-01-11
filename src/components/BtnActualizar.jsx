@@ -167,9 +167,6 @@ const BtnActualizar = ({ propiedad, onActualizado }) => {
     }
   };
 
-  //src={URL.createObjectURL(img)}
-  console.log("ARCHIVO EN BTN ACTUALIZAR  URL:", URL.createObjectURL);
-
   return (
     <Box as="div" color={"black"} bgColor={"none"}>
       {/* Botón Editar */}
@@ -404,7 +401,12 @@ const BtnActualizar = ({ propiedad, onActualizado }) => {
                             h="80px"
                           >
                             <img
-                              src={URL.createObjectURL(img)}
+                              //src={URL.createObjectURL(img)}
+                              src={
+                                img instanceof File
+                                  ? URL.createObjectURL(img)
+                                  : img
+                              }
                               alt="preview"
                               style={{
                                 width: "100%",
