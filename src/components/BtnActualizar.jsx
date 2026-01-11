@@ -400,8 +400,7 @@ const BtnActualizar = ({ propiedad, onActualizado }) => {
                             w="80px"
                             h="80px"
                           >
-                            <img
-                              //src={URL.createObjectURL(archivo)}
+                            <img //src={URL.createObjectURL(archivo)}
                               alt="preview"
                               style={{
                                 width: "100%",
