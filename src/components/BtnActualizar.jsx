@@ -403,9 +403,9 @@ const BtnActualizar = ({ propiedad, onActualizado }) => {
                             <img
                               //src={URL.createObjectURL(img)}
                               src={
-                                img instanceof File
-                                  ? URL.createObjectURL(img)
-                                  : img
+                                img.url.startsWith("http")
+                                  ? img.url
+                                  : `${API_URL}${img.url}`
                               }
                               alt="preview"
                               style={{
