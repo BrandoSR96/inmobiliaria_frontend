@@ -434,7 +434,7 @@ const BtnActualizar = ({ propiedad, onActualizado }) => {
                             <Box position="relative" key={img.id}>
                               <img
                                 alt="preview modal"
-                                src={`${img.url}`}
+                                src={`${API_URL}${img.url}`}
                                 className="w-[85px]"
                               />
                               <Box
