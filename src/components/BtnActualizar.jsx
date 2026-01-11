@@ -403,10 +403,13 @@ const BtnActualizar = ({ propiedad, onActualizado }) => {
                             <img
                               //src={URL.createObjectURL(img).startsWith("https")}
                               src={
-                                typeof img === "string" &&
-                                img.startsWith("https://res.cloudinary.com/")
+                                img instanceof File
+                                  ? URL.createObjectURL(img) // preview local
+                                  : img.startsWith(
+                                      "https://res.cloudinary.com/"
+                                    ) // solo Cloudinary
                                   ? img
-                                  : ""
+                                  : "" // ignora otras URLs
                               }
                               alt="preview"
                               style={{
