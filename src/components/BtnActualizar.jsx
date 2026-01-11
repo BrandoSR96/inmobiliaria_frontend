@@ -432,6 +432,11 @@ const BtnActualizar = ({ propiedad, onActualizado }) => {
                         <Flex wrap="wrap" gap={3}>
                           {imagenes.map((img) => (
                             <Box position="relative" key={img.id}>
+                              <img
+                                alt="preview modal"
+                                src={`${img.url}`}
+                                className="w-[85px]"
+                              />
                               <Box
                                 position="absolute"
                                 top="0px"
