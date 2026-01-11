@@ -271,9 +271,7 @@ const Terreno = ({ filteredPropiedades, filters, updateFilter }) => {
             >
               {/* lg:sticky w-full h-fit onClick={onOpen} */}
               {filteredPropiedades.map((prop) => {
-                const urlImagen = prop.multimedia?.[0]?.url
-                  ? `${API_URL}${prop.multimedia[0].url}`
-                  : "/img/fondo.png";
+                const urlImagen = prop.multimedia?.[0]?.url || "/img/fondo.png";
                 return (
                   <div
                     key={prop.id}
