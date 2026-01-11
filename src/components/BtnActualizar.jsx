@@ -159,7 +159,6 @@ const BtnActualizar = ({ propiedad, onActualizado }) => {
         params: { multimediaIds: [id] }, // 👈 enviar como lista
       });
       setImagenes((prev) => prev.filter((img) => img.id !== id));
-      console.log("URL.....", URL.createObjectURL());
     } catch (error) {
       console.error(
         "Error eliminando la imagen:",
@@ -403,17 +402,7 @@ const BtnActualizar = ({ propiedad, onActualizado }) => {
                           >
                             <img
                               //src={URL.createObjectURL(img)}
-                              //src="https://res.cloudinary.com/dk8mvsb8f/image/upload/v1768166295/qc5gjwcis3xosqcsrbys.jpg"
-
-                              src={
-                                img instanceof File
-                                  ? URL.createObjectURL(img)
-                                  : img.startsWith(
-                                      "https://res.cloudinary.com/dk8mvsb8f/image/upload/v1768166295/qc5gjwcis3xosqcsrbys.jpg"
-                                    )
-                                  ? img
-                                  : ""
-                              }
+                              src="https://res.cloudinary.com/dk8mvsb8f/image/upload/v1768166295/qc5gjwcis3xosqcsrbys.jpg"
                               alt="preview"
                               style={{
                                 width: "100%",
