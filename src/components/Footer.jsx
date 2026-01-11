@@ -15,14 +15,6 @@ const Footer = () => {
 
   const { colorMode } = useColorMode();
 
-  // const fondo = colorMode === "light"
-  //   ? "bg-[#FEF7F2] text-black"
-  //   : "bg-gray-900 text-white";
-
-  // const fondoSeccion = colorMode === "light"
-  //   ? "bg-[#FEF7F2]"
-  //   : "bg-gray-800";
-
   const fondoFooter = colorMode === "light" ? "bg-orange-300" : "bg-gray-800";
 
   return (
@@ -53,7 +45,8 @@ const Footer = () => {
             {textos[idioma].footer.formulario}
           </h3>
           <p>
-            {textos[idioma].footer.telefono}: <p>+51 984 010 709</p>
+            {textos[idioma].footer.telefono}: <p>+51 919 527 727</p>{" "}
+            <p>+51 984 010 709</p>
           </p>
           <p>
             {textos[idioma].footer.ubicacion}:{" "}

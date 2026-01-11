@@ -43,10 +43,7 @@ const BtnActualizar = ({ propiedad, onActualizado }) => {
     colorMode === "light" ? "bg-[#FEF7F2] text-black" : "bg-white text-black";
   //Subir archivo
   const [archivo, setArchivo] = useState([]); //-file
-  // const [imag, setImag] = useState(propiedad.multimedia || []);
-  // console.log("", imag)
-  // const [imagenesExistentes,setImagenesExistentes]=useState([propiedad.multimedia || []]);
-  // const [imagenesEliminar,setImagenesEliminar]=useState([]);
+
   const { isOpen, onOpen, onClose } = useDisclosure();
   const {
     isOpen: isOpenImg,
@@ -73,84 +70,6 @@ const BtnActualizar = ({ propiedad, onActualizado }) => {
       [name]: parseFloat(value) || 0,
     }));
   };
-
-  // 🧩 Guardar cambios
-  // const handleSubmit = async () => {
-  //   try {
-  //     setLoading(true);
-
-  //     // 1️⃣ Actualizar la propiedad
-  //     const response = await actualizarPropiedad(formData.id, formData);
-
-  //     if (!response) {
-  //       toast({
-  //         title: "Error",
-  //         description: "No se pudo actualizar la propiedad",
-  //         status: "error",
-  //         duration: 3000,
-  //         isClosable: true,
-  //       });
-  //       return;
-  //     }
-  //     // 2️⃣ Si hay imagen seleccionada, subirla
-  //     if (archivo.length > 0) {
-  //       try {
-  //         const imagenesSubidas = [];
-
-  //         for (const img of archivo) {
-  //           const nuevaImagen = await subirMultimedia(
-  //             img,
-  //             "imagen",
-  //             formData.id
-  //           );
-  //           imagenesSubidas.push({ url: nuevaImagen.archivo.url });
-  //         }
-
-  //         toast({
-  //           title: "Imágenes subidas",
-  //           description: "Todas las imágenes fueron subidas correctamente",
-  //           status: "success",
-  //           duration: 3000,
-  //           isClosable: true,
-  //         });
-
-  //         console.log("Imágenes subidas:", imagenesSubidas);
-  //       } catch (error) {
-  //         console.error("Error subiendo multimedia:", error);
-  //         toast({
-  //           title: "Error al subir imágenes",
-  //           description:
-  //             "La propiedad se actualizó, pero algunas imágenes fallaron",
-  //           status: "error",
-  //           duration: 3000,
-  //           isClosable: true,
-  //         });
-  //       }
-  //     }
-
-  //     toast({
-  //       title: "Propiedad actualizada",
-  //       description: "Los datos fueron guardados correctamente",
-  //       status: "success",
-  //       duration: 3000,
-  //       isClosable: true,
-  //     });
-
-  //     onClose();
-  //     if (onActualizado) onActualizado();
-  //   } catch (error) {
-  //     console.error("Error al actualizar:", error);
-  //     toast({
-  //       title: "Error",
-  //       description: "No se pudo actualizar la propiedad",
-  //       status: "error",
-  //       duration: 3000,
-  //       isClosable: true,
-  //     });
-  //   } finally {
-  //     setLoading(false);
-  //   }
-  // };
 
   const handleSubmit = async () => {
     try {
@@ -247,6 +166,9 @@ const BtnActualizar = ({ propiedad, onActualizado }) => {
       );
     }
   };
+
+  //src={URL.createObjectURL(img)}
+  console.log("ARCHIVO EN BTN ACTUALIZAR  URL:", URL.createObjectURL);
 
   return (
     <Box as="div" color={"black"} bgColor={"none"}>
@@ -583,124 +505,4 @@ export default BtnActualizar;
 
 {
   /* <img src={propiedad.multimedia[0].url} /> */
-}
-{
-  /* {propiedad.multimedia.length > 0 && (
-                      <Box mt={4}>
-                        <Flex wrap="wrap" gap={3}>                          
-                          {imagenes.map((img, index) => (
-                            <Box position="relative">
-                              <span >
-                                <img
-                                  alt="preview" 
-                                  key={index}
-                                  src={`${API_URL}" + img.url}
-                                  class="w-[85px] " />
-                              </span>                             
-                              <Box position="absolute"
-                              top="0px"
-                              right="2px"
-                              cursor="pointer"
-                              bg="white"
-                              borderRadius="full"
-                              p="2px" 
-                              onClick={() => removeImagenExistente(index)}                              
-                              >
-                                <AiOutlineClose />
-                              </Box>
-                            </Box>
-                          ))}
-                        </Flex>
-                      </Box>
-                    )} */
-}
-{
-  /* <Input
-                id="fileInput"
-                type="file"
-                multiple
-                accept="image/*"
-                display="none"
-                onChange={(e) => setArchivo(Array.from(e.target.files))}
-              />
-              <label htmlFor="fileInput">
-                <Flex align="center" border="1px solid #ccc" borderRadius="md" p="6px 12px" cursor="pointer"
-                  bg="gray.100" _hover={{ bg: "gray.200" }} gap="8px"
-                >
-                  <span
-                    style={{
-                      background: "#952C00", color: "white", padding: "4px 8px", borderRadius: "6px",
-                    }}
-                  >
-                    Elegir archivos
-                  </span>
-                  <span className="text-gray-700">
-                    {archivo.length === 0
-                      ? "Haz clic para seleccionar imágenes" // <-- TU TEXTO PERSONALIZADO
-                      : `${archivo.length} archivo(s) seleccionados`}
-                  </span>
-                </Flex>
-              </label>
-              {archivo.length > 0 && (
-                <div className="flex flex-wrap gap-3 mt-3">
-                  {archivo.map((img, index) => (
-                    <div key={index} className="w-20 h-20 relative">
-                      <img
-                        src={URL.createObjectURL(img)}
-                        alt="preview"
-                        className="absolute w-full h-full object-cover rounded-md border"
-                      />
-                      <span
-                        onClick={() => removeImage(index)}
-                        className="relative content-center cursor-pointer"
-                      >
-                        <AiOutlineClose color="black" />
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              )} */
-}
-
-// const removeImage = (indexToRemove) => {
-//   setArchivo((prev)=> prev.filter((_, i) =>1 !==indexToRemove));
-// };
-// const removeExistenteImage(indexToRemove) => {
-//   const removed = imagenesExistentes[indexToRemove];
-//   setImagenesEliminar((prev)=>[...prev,removed.id]);
-//   setImagenesExistentes((prev)=>prev.filter((_, i) =>i !==indexToRemove));
-// }
-{
-  /* <FormLabel class="flex flex-col gap-1">File Imagen</FormLabel>
-              <Input
-                key="fileInput"
-                bg={"red.100"}
-                border={"1px solid"}
-                alignContent={"center"}
-                type="file"
-                multiple
-                accept="image/*"
-                class="pb-2"
-                onChange={(e) => setArchivo(Array.from(e.target.files))}
-              />
-
-              {archivo.length > 0 && (
-                <div className="flex flex-wrap gap-3 mt-3">
-                  {archivo.map((img, index) => (
-                    <div key={index} className="w-24 h-24 relative">
-                      <img
-                        src={URL.createObjectURL(img)}
-                        alt="preview"
-                        className="absolute w-full h-full object-cover rounded-md border"
-                      />
-                      <span
-                        onClick={() => removeImage(index)}
-                        class="relative content-center cursor-pointer"
-                      >
-                        <AiOutlineClose color="black" />
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              )} */
 }
