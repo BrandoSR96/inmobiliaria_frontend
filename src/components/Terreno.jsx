@@ -17,7 +17,13 @@ import Carousel from "./Carousel";
 import { useColorMode } from "@chakra-ui/react";
 import { useIdioma } from "../components/IdiomaContext";
 import { textos } from "../components/traductor/textos";
+
 const API_URL = import.meta.env.VITE_API_URL;
+
+const buildImageUrl = (url) => {
+  if (!url) return "/img/fondo.png";
+  return url.startsWith("http") ? url : `${API_URL}${url}`;
+};
 
 const Terreno = ({ filteredPropiedades, filters, updateFilter }) => {
   const { idioma } = useIdioma();
@@ -271,7 +277,6 @@ const Terreno = ({ filteredPropiedades, filters, updateFilter }) => {
             >
               {/* lg:sticky w-full h-fit onClick={onOpen} */}
               {filteredPropiedades.map((prop) => {
-                const urlImagen = prop.multimedia?.[0]?.url || "/img/fondo.png";
                 return (
                   <div
                     key={prop.id}
@@ -307,7 +312,7 @@ const Terreno = ({ filteredPropiedades, filters, updateFilter }) => {
                           //   class="object-cover group-hover:scale-105 transition-transform duration-300 z-0
                           //  inset-0 text-transparent h-[fit] w-[fit] mx-auto 2xl:h-[100%] 2xl:w-[100%] lg:h-[100%] lg:w-[100%] xl:h-[100%] xl:w-[100%] md:h-fit md:w-fit "
                           // sm:w-full sm:h-full
-                          src={`${API_URL}${urlImagen}`}
+                          src={buildImageUrl(prop.multimedia?.[0]?.url)}
                           alt={prop.titulo}
                         />
                       </div>
@@ -432,8 +437,8 @@ const Terreno = ({ filteredPropiedades, filters, updateFilter }) => {
                     <div class={`h-full bg-muted `}>
                       {(() => {
                         const imagenesProp =
-                          selectedProp?.multimedia?.map(
-                            (img) => `${API_URL}${img.url}`
+                          selectedProp?.multimedia?.map((img) =>
+                            buildImageUrl(img.url)
                           ) || [];
                         return (
                           <Carousel
