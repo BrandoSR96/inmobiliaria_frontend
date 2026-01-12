@@ -423,7 +423,7 @@ const Terreno = ({ filteredPropiedades, filters, updateFilter }) => {
               {selectedProp && (
                 <div
                   key={selectedProp.id}
-                  class={`h-[523px] w-[460px] max-sm:max-w-[300px] xl:w-full md:w-full bg-card text-card-foreground flex flex-col cursor-pointer `}
+                  class={`h-[523px] max-sm:max-w-[440px] xl:w-full md:w-full bg-card text-card-foreground flex flex-col cursor-pointer sm:w-full`}
                 >
                   <div class={`flex justify-between items-center px-[0px] `}>
                     <ModalHeader class={`py-[15px] !px-[10px] text-[24px] `}>
