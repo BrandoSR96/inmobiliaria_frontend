@@ -412,9 +412,7 @@ const Terreno = ({ filteredPropiedades, filters, updateFilter }) => {
           isCentered
         >
           <ModalOverlay />
-          <ModalContent
-            class={`w-fit h-fit max-sm:max-w-[90%] 2xl:w-[850px] lg:w-[650px] md:w-[550px] sm:w-fit`}
-          >
+          <ModalContent class=" 2xl:w-[850px] lg:w-[750px] md:w-[650px] sm:w-[550px] max-sm:w-[440px]">
             <ModalBody
               pr={0}
               pl={0}
