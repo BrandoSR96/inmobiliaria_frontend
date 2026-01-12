@@ -412,7 +412,7 @@ const Terreno = ({ filteredPropiedades, filters, updateFilter }) => {
           isCentered
         >
           <ModalOverlay />
-          <ModalContent class=" 2xl:w-[850px] lg:w-[750px] md:w-[650px] sm:w-[500px] max-sm:w-[360px]">
+          <ModalContent class=" 2xl:w-[850px] lg:w-[850px] md:w-[650px] sm:w-[500px] max-sm:w-[360px]">
             <ModalBody
               pr={0}
               pl={0}
@@ -423,13 +423,17 @@ const Terreno = ({ filteredPropiedades, filters, updateFilter }) => {
               {selectedProp && (
                 <div
                   key={selectedProp.id}
-                  class="h-[523px] max-sm:max-w-[360px] sm:w-[500px] xl:w-full md:w-full bg-card text-card-foreground flex flex-col cursor-pointer sm:w-full"
+                  class="h-[523px] max-sm:max-w-[360px] lg:w-[850px] sm:w-[500px] xl:w-full md:w-full bg-card text-card-foreground flex flex-col cursor-pointer sm:w-full"
                 >
-                  <div class={`flex justify-between items-center px-[0px] `}>
-                    <ModalHeader class={`py-[15px] !px-[10px] text-[24px] `}>
+                  <div
+                    class={`flex justify-between items-center px-[10px] w-full`}
+                  >
+                    <ModalHeader
+                      class={`py-[10px] !px-[10px] text-[20px] max-sm:text-[13px] w-fit text-bold font-semibold`}
+                    >
                       {selectedProp.titulo}
                     </ModalHeader>
-                    <ModalCloseButton class="w-[30px] p-[10px]" />
+                    <ModalCloseButton class="w-[2em] h-[2em]" />
                   </div>
                   <div class={`flex gap-6 flex-col `}>
                     <div class={`h-full bg-muted `}>
