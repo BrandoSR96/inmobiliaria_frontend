@@ -412,7 +412,7 @@ const Terreno = ({ filteredPropiedades, filters, updateFilter }) => {
           isCentered
         >
           <ModalOverlay />
-          <ModalContent class=" 2xl:w-[850px] lg:w-[750px] md:w-[650px] sm:w-[550px] max-sm:w-[440px]">
+          <ModalContent class=" 2xl:w-[850px] lg:w-[750px] md:w-[650px] sm:w-[500px] max-sm:w-[360px]">
             <ModalBody
               pr={0}
               pl={0}
@@ -423,7 +423,7 @@ const Terreno = ({ filteredPropiedades, filters, updateFilter }) => {
               {selectedProp && (
                 <div
                   key={selectedProp.id}
-                  class={`h-[523px] max-sm:max-w-[440px] xl:w-full md:w-full bg-card text-card-foreground flex flex-col cursor-pointer sm:w-full`}
+                  class="h-[523px] max-sm:max-w-[360px] sm:w-[500px] xl:w-full md:w-full bg-card text-card-foreground flex flex-col cursor-pointer sm:w-full"
                 >
                   <div class={`flex justify-between items-center px-[0px] `}>
                     <ModalHeader class={`py-[15px] !px-[10px] text-[24px] `}>
